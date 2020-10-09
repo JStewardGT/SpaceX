@@ -1,0 +1,31 @@
+<section class="container" *ngIf="launche">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ launche.name }}</mat-card-title>
+      <!-- <mat-card-subtitle>{{ launche.name }}</mat-card-subtitle> -->
+    </mat-card-header>
+    <img *ngIf="launche.links.patch.small" mat-card-image [src]="launche.links.patch.small" [alt]="launche.name">
+    <mat-card-content>
+      <p>
+        {{ launche.details}}
+      </p>
+      <p>
+        date precision: <strong>{{ launche.date_precision }}</strong>
+      </p>
+      <p>
+        date local: <strong>{{ launche.date_local | date }}</strong>
+      </p>
+      <p>
+        date utc: <strong>{{ launche.date_utc | date }}</strong>
+      </p>
+      <p>
+        static fire date utc: <strong>{{ launche.static_fire_date_utc | date }}</strong>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button [href]="launche.links.article" target="_blank">article</a>
+      <a mat-button [href]="launche.links.webcast" target="_blank">webcast</a>
+      <a mat-button [href]="launche.links.wikipedia" target="_blank">wikipedia</a>
+    </mat-card-actions>
+  </mat-card>
+</section>

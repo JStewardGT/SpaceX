@@ -1,0 +1,46 @@
+<h2>Past launches</h2>
+
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput placeholder="Ex. ium" #input>
+</mat-form-field>
+
+<div class="mat-elevation-z8 mb-2em">
+  <div class="table-responsive">
+    <table mat-table [dataSource]="launches" matSort class="text-center">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="static_fire_date_utc">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> static fire date utc </th>
+        <td mat-cell *matCellDef="let element"> {{element.static_fire_date_utc | date}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="date_utc">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> date utc </th>
+        <td mat-cell *matCellDef="let element"> {{element.date_utc | date}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="date_local">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> date local </th>
+        <td mat-cell *matCellDef="let element"> {{element.date_local | date}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> action </th>
+        <td mat-cell *matCellDef="let element">
+          <a [routerLink]="['detail', element.id]" mat-raised-button color="primary">
+            detail
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

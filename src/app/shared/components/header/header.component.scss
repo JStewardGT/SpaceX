@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+
+$primary: mat-palette($mat-indigo);
+
+nav > a {
+  padding: 5px;
+  text-decoration: none;
+
+  &.active {
+    background-color: darken(mat-color($primary), 5%);
+  }
+}
+
+.header {
+  &-toolbar {
+    margin-bottom: 20px;
+  }
+  &-row {
+    width: 100%;
+  }
+}
+
+.mat-sort-header-container {
+  justify-content: center !important;
+}
