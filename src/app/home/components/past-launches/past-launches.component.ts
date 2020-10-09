@@ -33,7 +33,6 @@ export class PastLaunchesComponent implements OnInit {
     .subscribe(launches => {
       this.launches = launches;
       this.dataSource.data = this.launches;
-      console.log(this.launches);
     });
   }
 
