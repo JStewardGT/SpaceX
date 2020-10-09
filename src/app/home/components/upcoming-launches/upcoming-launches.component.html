@@ -2,12 +2,12 @@
 
 <mat-form-field>
   <mat-label>Filter</mat-label>
-  <input matInput placeholder="Ex. ium" #input>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
 </mat-form-field>
 
 <div class="mat-elevation-z8 mb-2em">
   <div class="table-responsive">
-    <table mat-table [dataSource]="launches" matSort class="text-center">
+    <table mat-table [dataSource]="dataSource" matSort class="text-center">
 
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> name </th>

@@ -34,6 +34,7 @@ export class UpcomingLaunchesComponent implements OnInit {
     this.launchesService.getAllUpcomingLaunches()
     .subscribe(launches => {
       this.launches = launches;
+      this.dataSource.data = launches;
     });
   }
 

@@ -32,7 +32,8 @@ export class PastLaunchesComponent implements OnInit {
     this.launchesService.getAllPastLaunches()
     .subscribe(launches => {
       this.launches = launches;
-      // console.log(launches);
+      this.dataSource.data = this.launches;
+      console.log(this.launches);
     });
   }
 
