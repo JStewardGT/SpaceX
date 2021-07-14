@@ -1,6 +1,23 @@
 # SpaceX
 
+application that makes requests to API SpaceX to display information about its flights, search and organize them
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
+
+## link vercel pages
+
+[SpaceX](https://space-x-jstewardgt.vercel.app/home)
+
+## screenshot
+
+![Scrennshot](screenshot.png)
+
+
+## Used tools
+
+1. Angular
+
+2. Angular Material
 
 ## Development server
 
